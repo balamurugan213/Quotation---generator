@@ -1,0 +1,56 @@
+{
+			style: 'tableExample',
+			table: {
+				body: [
+					['Column 1', 'Column 2', 'Column 3'],
+					[
+						{
+							stack: [
+								'Let\'s try an unordered list',
+								{
+									ul: [
+										'item 1',
+										'item 2'
+									]
+								}
+							]
+						},
+						[
+							'or a nested table',
+							{
+								table: {
+									body: [
+										['Col1', 'Col2', 'Col3'],
+										['1', '2', '3'],
+										['1', '2', '3']
+									]
+								},
+							}
+						],
+						{text: [
+								'Inlines can be ',
+								{text: 'styled\n', italics: true},
+								{text: 'easily as everywhere else', fontSize: 10}]
+						}
+					]
+				]
+			}
+		},
+
+var dd = {
+	content: [
+		{text: 'Tables', style: 'header'},
+		'Official documentation is in progress, this document is just a glimpse of what is possible with pdfmake and its layout engine.',
+		{text: 'A simple table (no headers, no width specified, no spans, no styling)', style: 'subheader'},
+		'The following table has nothing more than a body array',
+		{
+			style: 'tableExample',
+			table: {
+				body: [
+					['Column 1', 'Column 2', 'Column 3'],
+					['One value goes here', 'Another one here', 'OK?']
+				]
+			}
+		},
+    ]
+}

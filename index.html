@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.68/pdfmake.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.68/vfs_fonts.js"></script>
+
+<script src="./app.js"></script>
+
+<link rel="stylesheet" href="style.css">
+<body ng-app="qgApp">
+    <div  ng-controller="quotation">
+        <form ng-submit='addData()'>
+            Name
+            <input type="text" ng-model="name">
+            Quantity
+            <input type="text" ng-model="quantity">
+            Rate
+            <input type="text" ng-model="rate">
+            <input type="submit" value="add">
+        </form>
+        <ul>
+            <li class="lis">
+                <h3>Name</h3>
+                <h3>Rate</h3>
+                <h3>Quan</h3>
+                <h3>Total</h3>
+            </li>
+            <li ng-repeat="q in quot" class="lis">
+                <h3>{{q.name}}</h3>
+                <h3>{{q.rate}}</h3>
+                <h3>{{q.quantity}}</h3>
+                <h3>{{q.rate * q.quantity}}</h3>
+            </li>
+        </ul>
+        <button ng-click="makePdf()">
+            makepdf
+        </button>
+    </div>
+
+</body>
+</html>
