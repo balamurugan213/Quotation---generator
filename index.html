@@ -1,40 +1,72 @@
 <!DOCTYPE html>
 <html>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.68/pdfmake.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.68/vfs_fonts.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.68/pdfmake.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.68/vfs_fonts.js"></script>
 
-<script src="./app.js"></script>
+        <script src="./app.js"></script>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+        <link rel="stylesheet" href="style.css">
+    </head>
 
-<link rel="stylesheet" href="style.css">
 <body ng-app="qgApp">
-    <div  ng-controller="quotation">
+    <div class="quote"  ng-controller="quotation">
+        <h1 class="title t1" >Quotation Table</h1>
         <form ng-submit='addData()'>
-            Name
-            <input type="text" ng-model="name">
-            Quantity
-            <input type="text" ng-model="quantity">
-            Rate
-            <input type="text" ng-model="rate">
-            <input type="submit" value="add">
+            <div class="inp">
+                NAME
+                <input type="text" ng-model="name">
+            </div>
+            <div class="inp">
+                QUANTITY
+                 <input type="number" ng-model="quantity">
+            </div>
+            <div class="inp">
+                RATE
+                <input type="number" ng-model="rate">
+            </div>
+            <div class="inp">
+                <button type="submit">ADD</button>
+                <!-- <input type="submit" value="add"> -->
+            </div>
         </form>
         <ul>
-            <li class="lis">
-                <h3>Name</h3>
-                <h3>Rate</h3>
-                <h3>Quan</h3>
-                <h3>Total</h3>
-            </li>
-            <li ng-repeat="q in quot" class="lis">
-                <h3>{{q.name}}</h3>
-                <h3>{{q.rate}}</h3>
-                <h3>{{q.quantity}}</h3>
-                <h3>{{q.rate * q.quantity}}</h3>
+            <li class="lis ls">
+                <div class="tab">
+                    <h3 class="val">NAME</h3>
+                    <h3 class="val">RATE</h3>
+                    <h3 class="val">QUANTITY</h3>
+                    <h3 class="val">AMOUNT</h3>
+                </div>
+            
             </li>
         </ul>
-        <button ng-click="makePdf()">
-            makepdf
+        <div class="scroll">
+            <ul>
+                <li ng-repeat="q in quot" class="lis">
+                    <div class="tab">
+                        <h3 class="val">{{q.name}}</h3>
+                        <h3 class="val">{{q.rate}}</h3>
+                        <h3 class="val">{{q.quantity}}</h3>
+                        <h3 class="val">Rs.{{q.rate * q.quantity}}</h3>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <ul>
+            <li class="lis ls">
+                <div class="tab total">
+                    <!-- <h3 class="val">NAME</h3>
+                    <h3 class="val">RATE</h3> -->
+                        <h3 class="val">TOTAL</h3>
+                        <h3 class="val">{{totals}}</h3>
+                </div>
+            </li>
+        </ul>
+        <button class="btn" ng-click="makePdf()">
+            OPEN IN PDF
         </button>
     </div>
 

@@ -1,3 +1,66 @@
+body
+{
+    background-color: #1f292e;
+}
+
+.quote ul li{
+    display: flex;
+    flex-flow: row;
+}
+
+.title{
+    text-align: center;
+    font-family: "Audiowide", sans-serif;
+    color: white;
+}
+
+
+.val{
+    flex: 1;
+    color: #1f292e;
+    font-family: "Audiowide", sans-serif;
+    font-weight: normal;
+    text-align: center;
+}
+
+.ls .val{
+    color: #ffffff;
+    font-weight: bolder;
+}
+
+.ls .tab{
+    background-color: #f4837d;
+}
+
+.quote form{
+    background-color: #1f292e;
+    border: solid;
+    border-width: 3px;
+    border-color: #99b998;
+    border-radius: 10px;
+    margin: 50px;
+    padding: 20px;
+    position: relative;
+    display: flex;
+    flex-flow: row;
+    position: relative;
+}
+
+.tab{
+    width:100% ;
+    background-color: #ffdda6;
+    margin: 10px;
+    padding: 20px;
+    position: relative;
+    display: flex;
+    flex-flow: row;
+}
+
+.quote ul{
+    padding: 0%;
+}
+
+
 .lis{
     display: flex;
     flex-flow: row;
@@ -6,3 +69,78 @@
 .lis h3{
     margin: 10px;
 }
+
+.inp{
+    display: inline;
+    transform: translateX(0vw);
+    padding: 10px;
+    justify-content: center;
+    color: white;
+    font-family: "Audiowide", sans-serif;
+    margin: auto;
+    font-size: 20px;
+    
+}
+.inp input{
+    width: 200px;
+    height: 30px;
+} 
+
+.tab.total{
+    width: 50%;
+    margin-left: 50%;
+}
+
+.inp button,.btn
+{
+    color:#1f292e;
+    background-color:  #99b998;
+    font-weight: bolder;
+    border: none;
+    padding: 5px 10px;
+}
+
+.btn{
+    padding: 20px 50px;
+    transform: translateX(-50%);
+    position: absolute;
+    left: 50%;
+
+}
+
+.scroll{
+    overflow-y: scroll;
+    max-height: 35vh;
+
+}
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
+
+@media screen and (min-width: 1000px) {
+    .quote{
+        
+        margin:50px 500px;
+        
+    }
+    /* .tab{
+        
+        margin:50px 500px;
+        
+    } */
+  }

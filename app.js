@@ -3,7 +3,7 @@ var app = angular.module('qgApp', []);
 app.controller("quotation", function($scope) {
     $scope.firstName = "John";
     $scope.lastName = "Do";
-
+    $scope.totals=0;
     $scope.name="ph";
     $scope.quantity=10;
     $scope.rate=100;
@@ -15,30 +15,31 @@ app.controller("quotation", function($scope) {
             quantity  : $scope.quantity,
             rate      : $scope.rate
         })
+        $scope.totals=$scope.totals +( $scope.rate * $scope.quantity)
         $scope.name = ''
         $scope.quantity = ''
         $scope.rate = ''
-
+        
         console.log($scope.quot)
 
     }
     
     $scope.quot=[
-        {
-            "name":'comp',
-            "quantity":5,
-            "rate":500
-        },
-        {
-            "name":'modem',
-            "quantity":2,
-            "rate":600
-        },
-        {
-            "name":'book',
-            "quantity":3,
-            "rate":400
-        }
+        // {
+        //     "name":'comp',
+        //     "quantity":5,
+        //     "rate":500
+        // },
+        // {
+        //     "name":'modem',
+        //     "quantity":2,
+        //     "rate":600
+        // },
+        // {
+        //     "name":'book',
+        //     "quantity":3,
+        //     "rate":400
+        // }
     ]    
 
 
