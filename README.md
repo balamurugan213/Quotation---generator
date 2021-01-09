@@ -1,3 +1,3 @@
-## QUOTATION GENERATOR
+# QUOTATION GENERATOR
 
-updated by Thariq
+updated by Thariq & bala.

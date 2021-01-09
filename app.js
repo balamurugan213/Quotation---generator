@@ -25,21 +25,7 @@ app.controller("quotation", function($scope) {
     }
     
     $scope.quot=[
-        // {
-        //     "name":'comp',
-        //     "quantity":5,
-        //     "rate":500
-        // },
-        // {
-        //     "name":'modem',
-        //     "quantity":2,
-        //     "rate":600
-        // },
-        // {
-        //     "name":'book',
-        //     "quantity":3,
-        //     "rate":400
-        // }
+       
     ]    
 
 
